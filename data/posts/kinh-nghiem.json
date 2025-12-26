@@ -1,0 +1,29 @@
+[
+    {
+        "id": "exp-03",
+        "title": "Bẫy của dây cắm và testboard: Bài học xương máu từ dự án Smart Home",
+        "category": "KINH_NGHIEM",
+        "date": "26/12/2025",
+        "summary": "10 tiếng đồng hồ debug code Flutter, hóa ra chỉ vì 1 sợi dây lỏng. Đừng để testboard phá hỏng dự án của bạn!",
+        "path": "content/kinh-nghiem/testboard-trap.md",
+        "featured": true
+    },
+    {
+        "id": "exp-04",
+        "title": "So sánh phương pháp: 'Em yêu khoa học' vs 'Người làm theo phương pháp khoa học'",
+        "category": "KINH_NGHIEM",
+        "date": "26/12/2025",
+        "summary": "Bạn thực sự hiểu hệ thống IoT, hay chỉ đang 'diễn kịch' với linh kiện? Code ví dụ thực tế từ cảm biến khói đến tối ưu pin.",
+        "path": "content/kinh-nghiem/cargo-cult-iot.md",
+        "featured": true
+    },
+    {
+        "id": "exp-05",
+        "title": "Sinh viên năm nhất: Bàn đầu hay bàn cuối? Bài học về tâm lý 'Hạt cát vô hình'",
+        "category": "KINH_NGHIEM",
+        "date": "26/12/2025",
+        "summary": "Khi bạn thay đổi vị trí ngồi, bạn sẽ thay đổi tầm nhìn. 4 nguyên tắc sống còn cho tân sinh viên: Bàn đầu, chọn bạn, kỷ luật, tài chính.",
+        "path": "content/kinh-nghiem/tan-sinh-vien-ban-dau.md",
+        "featured": true
+    }
+]

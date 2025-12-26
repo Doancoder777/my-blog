@@ -1,0 +1,58 @@
+[
+  {
+    "title": "🚀 Lộ trình trở thành Kỹ sư AIoT - Chi tiết",
+    "date": "2025-12-27",
+    "category": "LO_TRINH",
+    "path": "content/lo-trinh-aiot/lo-trinh-ky-su-aiot.md",
+    "summary": "Lộ trình chi tiết 12-18 tháng để trở thành Kỹ sư AIoT chuyên nghiệp, từ điện tử cơ bản đến Computer Vision",
+    "featured": true
+  },
+  {
+    "title": "🗺️ Lộ trình AIoT - Tổng quát",
+    "date": "2025-12-27",
+    "category": "LO_TRINH",
+    "path": "content/lo-trinh-aiot/tong-quat.md",
+    "summary": "Cái nhìn tổng quan về 4 trụ cột của AIoT: Điện tử, Embedded, IoT, và Computer Vision",
+    "featured": true
+  },
+  {
+    "title": "🔌 Điện tử cơ bản cho AIoT",
+    "date": "2025-12-27",
+    "category": "LO_TRINH",
+    "path": "content/lo-trinh-aiot/dien-tu-cb/index.md",
+    "summary": "Kiến thức điện tử nền tảng: định luật Ohm, linh kiện, sensors, actuators và kỹ năng thực hành",
+    "featured": false
+  },
+  {
+    "title": "💻 Hệ thống nhúng (Embedded Systems)",
+    "date": "2025-12-27",
+    "category": "LO_TRINH",
+    "path": "content/lo-trinh-aiot/embedded/index.md",
+    "summary": "Arduino, ESP32, STM32 - Lập trình vi điều khiển, giao thức truyền thông và RTOS",
+    "featured": false
+  },
+  {
+    "title": "🌐 Internet of Things (IoT)",
+    "date": "2025-12-27",
+    "category": "LO_TRINH",
+    "path": "content/lo-trinh-aiot/iot/index.md",
+    "summary": "MQTT, HTTP, WebSocket, Cloud platforms và xây dựng hệ thống IoT hoàn chỉnh",
+    "featured": false
+  },
+  {
+    "title": "🤖 Computer Vision & AI cho AIoT",
+    "date": "2025-12-27",
+    "category": "LO_TRINH",
+    "path": "content/lo-trinh-aiot/computer-vision/index.md",
+    "summary": "Machine Learning, Deep Learning, YOLO và triển khai AI trên Edge devices",
+    "featured": false
+  },
+  {
+    "title": "🤖 YOLOv10 - Phân loại rác thải thông minh",
+    "date": "2025-12-27",
+    "category": "LO_TRINH",
+    "path": "content/lo-trinh-aiot/computer-vision/yolov10-trash.md",
+    "summary": "Dự án thực tế: Train và deploy YOLOv10 để phân loại rác thải trên Raspberry Pi",
+    "featured": true
+  }
+]

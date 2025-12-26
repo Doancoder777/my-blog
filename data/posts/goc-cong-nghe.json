@@ -1,0 +1,38 @@
+[
+    {
+        "id": "tech-06",
+        "title": "Arduino UNO Q: \"Cú Bắt Tay\" Tỷ Đô Giữa Qualcomm Và Arduino Có Làm Nên Cách Mạng?",
+        "category": "GOC_CONG_NGHE",
+        "date": "27/12/2025",
+        "summary": "Phẫu thuật kiến trúc Dual-Brain độc đáo: Qualcomm QRB2210 + STM32U585 trên cùng một board. Phân tích chiến lược tỷ đô đằng sau việc Qualcomm mua lại Arduino và liệu UNO Q có đủ sức cạnh tranh với Raspberry Pi, Jetson Nano.",
+        "path": "content/goc-cong-nghe/arduino-uno-q-qualcomm-revolution.md",
+        "featured": true
+    },
+    {
+        "id": "tech-05",
+        "title": "ESP32 Làm Trợ Lý Ảo? Giải Mã Kiến Trúc Xiaozhi AI Và Bài Học Client-Server Đắt Giá",
+        "category": "GOC_CONG_NGHE",
+        "date": "26/12/2025",
+        "summary": "Cộng đồng Maker đang 'phát sốt' với Xiaozhi AI - dự án biến con chip ESP32 giá 200k thành robot thông minh. Bí mật không nằm ở sức mạnh phần cứng, mà nằm ở kiến trúc Client-Server kinh điển mà mọi kỹ sư AIoT phải ngả mũ.",
+        "path": "content/goc-cong-nghe/xiaozhi-esp32-client-server.md",
+        "featured": true
+    },
+    {
+        "id": "tech-04",
+        "title": "Huyền Thoại GNU/Linux: Từ Căn Phòng Lạnh Lẽo Đến Kẻ Thống Trị Hành Tinh (Và Cả Sao Hỏa)",
+        "category": "GOC_CONG_NGHE",
+        "date": "26/12/2025",
+        "summary": "Câu chuyện về sự thống trị tuyệt đối của Linux trong thế giới nhúng. Từ lịch sử hào hùng của Linus Torvalds đến triết lý mã nguồn mở và lý do kỹ thuật cốt tử giải thích tại sao mọi kỹ sư nhúng phải biết Linux.",
+        "path": "content/goc-cong-nghe/linux-embedded-legend.md",
+        "featured": true
+    },
+    {
+        "id": "tech-03",
+        "title": "Từ Bóng Đèn UV Đến Trí Tuệ Nhân Tạo: Sự Tiến Hóa 'Điên Rồ' Của Vi Điều Khiển",
+        "category": "GOC_CONG_NGHE",
+        "date": "26/12/2025",
+        "summary": "Phơi chip dưới đèn UV 30 phút để xóa code → OTA update qua Wi-Fi 30 giây. Hành trình 50 năm từ Assembly đến AI trên MCU.",
+        "path": "content/goc-cong-nghe/mcu-evolution.md",
+        "featured": true
+    }
+]

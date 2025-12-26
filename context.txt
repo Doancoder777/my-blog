@@ -1,0 +1,74 @@
+_________________________________________________________________________________________________________________
+|                                                                                                               |
+|                                                 CHIA SẺ AIoT                                                  |
+|                                         (Slogan của bạn ở đây)                                                |
+|_______________________________________________________________________________________________________________|
+|                                                                                                               |
+|  HOME  |  KINH NGHIỆM  |  KIẾN THỨC  |  GÓC CÔNG NGHỆ  |  LỘ TRÌNH AIoT [ᐁ]  |  ABOUT ME [ᐁ]                  |
+|_______________________________________________________________________________________________________________|
+|                                                                                                               |
+|                                                                                                               |
+|                                            PHẦN NỘI DUNG CHÍNH                                                |
+|                                     (Hiển thị bài viết, dự án, video...)                                      |
+|                                                                                                               |
+|                                                                                                               |
+|_______________________________________________________________________________________________________________|
+
+
+
+1. Tóm tắt dự án
+Tên dự án: Website "CHIA SẺ AIoT".
+
+Mục tiêu: Tạo một Blog kỹ thuật và Portfolio cá nhân để chia sẻ kiến thức về Điện tử, Hệ thống nhúng (Embedded), IoT và Thị giác máy tính (Computer Vision).
+
+Phong cách thiết kế: Tối giản (Minimalism), hiện đại, tập trung vào nội dung và khả năng hiển thị mã nguồn (code).
+
+
+💡 Lợi ích của bố cục này:
+Không gian hiển thị rộng: Toàn bộ phần thân trang web bây giờ có thể dành trọn cho các bài viết chuyên môn hoặc giới thiệu dự án mà không bị chiếm chỗ bởi sidebar.
+
+Tập trung vào nội dung: Người dùng có thể dễ dàng tìm thấy mọi thứ chỉ qua một thanh điều hướng duy nhất.
+
+Chuyên nghiệp: Rất giống với cấu trúc của các blog kỹ thuật và Portfolio hiện đại.
+
+Bạn có muốn tôi viết mã HTML/CSS để tạo thanh Menu có tính năng "thả xuống" (dropdown) cho các mục Lộ trình và About Me không?
+
+
+
+📑 1. Tổng kết hướng giải quyết công nghệ (Tech Stack)Chúng ta sử dụng mô hình Jamstack đơn giản (JavaScript, APIs, và Markup) để tạo ra một trang web tĩnh nhưng có khả năng quản lý dữ liệu linh hoạt.Thành phầnCông nghệ sử dụngVai tròGiao diện (Frontend)HTML5, CSS3 (Flexbox/Grid), Vanilla JSTạo khung xương, định dạng thẩm mỹ và xử lý logic.Nội dung (Content)Markdown (.md)Giúp viết bài kỹ thuật (có code, ảnh, bảng) cực nhanh và chuyên nghiệp.Dữ liệu (Data)JSONFile posts.json đóng vai trò là "Cơ sở dữ liệu" để quản lý danh sách bài viết.Thư viện bổ trợMarked.js & Prism.jsChuyển đổi Markdown sang HTML và tô màu mã nguồn (Syntax Highlighting).Triển khai (Deploy)GitHub PagesLưu trữ mã nguồn và xuất bản website lên internet miễn phí.📂 2. Cấu trúc thư mục chuẩn (Final Folder Structure)Cấu trúc này giúp bạn tách biệt hoàn toàn giữa Mã nguồn, Dữ liệu và Tài nguyên.Plaintext/my-aiot-blog (Root)
+│
+├── index.html              # Trang chủ: Chứa Menu 6 mục và danh sách bài viết bài viết
+├── post-detail.html        # Trang chi tiết: Khung hiển thị nội dung cho các bài .md
+├── style.css               # CSS: Giao diện Menu, Dropdown và giao diện bài viết
+├── script.js               # JS: Đọc file JSON, lọc bài theo Menu và hiển thị nội dung
+│
+├── data/                   
+│   └── posts.json          # DATABASE: Khai báo Tiêu đề, Category, Ngày, URL của bài viết
+│
+├── content/                # NƠI CHỨA CÁC FILE BÀI VIẾT (.md)
+│   ├── kinh-nghiem/        # [Mục 2: CHIA SẺ KINH NGHIỆM]
+│   ├── kien-thuc/          # [Mục 3: CHIA SẺ KIẾN THỨC]
+│   ├── goc-cong-nghe/      # [Mục 4: GÓC CÔNG NGHỆ]
+│   │
+│   ├── lo-trinh-aiot/      # [Mục 5: LỘ TRÌNH AIoT - Dropdown]
+│   │   ├── dien-tu-cb/     #   - Nhánh Điện tử cơ bản
+│   │   ├── embedded/       #   - Nhánh Hệ thống nhúng (ESP32, STM32...)
+│   │   ├── iot/            #   - Nhánh Internet vạn vật
+│   │   └── computer-vision/#   - Nhánh Thị giác máy tính (AI, YOLO...)
+│   │
+│   └── about-me/           # [Mục 6: ABOUT ME - Dropdown]
+│       ├── info.md         #   - Thông tin cá nhân
+│       ├── certificates.md #   - Chứng chỉ & Thành tích
+│       └── projects.md     #   - Tổng hợp dự án (Smart Trash Can...)
+│
+└── assets/                 # TÀI NGUYÊN MEDIA
+    ├── icons/              # Icon cho Menu & Danh mục (svg/png)
+    ├── images/             # Ảnh minh họa bên trong các bài viết
+    └── lib/                # Các thư viện JS tải sẵn (marked.min.js, prism.js)
+🚀 3. Quy trình Triển khai (Deployment Tech)Để đưa website này lên internet miễn phí bằng GitHub Pages, bạn thực hiện theo các bước sau:Bước 1: Khởi tạo Repository trên GitHubTruy cập github.com và tạo một Repository mới (Ví dụ: my-aiot-blog).Sử dụng Git để đẩy (push) toàn bộ thư mục trên máy tính lên GitHub:git initgit add .git commit -m "Initial commit - AIoT Blog structure"git remote add origin [Link-Repo-Của-Bạn]git push -u origin mainBước 2: Kích hoạt GitHub PagesTại giao diện Repository trên GitHub, vào mục Settings.Chọn menu Pages ở cột bên trái.Ở mục Build and deployment, chọn Branch là main và thư mục là / (root).Nhấn Save. Sau khoảng 1-2 phút, bạn sẽ có link website dạng: https://username.github.io/my-aiot-blog/.🛠 4. Lộ trình vận hành bài viết (Workflow)Sau khi đã thiết lập xong bộ khung, mỗi khi muốn đăng bài mới, bạn không cần sửa code, chỉ cần làm 3 bước:Soạn thảo: Tạo file .md trong thư mục content/ tương ứng (Ví dụ: smart-trash.md). Chèn ảnh vào assets/images/.Khai báo: Mở file data/posts.json, thêm 1 khối dữ liệu mới:JSON{
+  "title": "Dự án Thùng rác thông minh ESP32",
+  "category": "KINH_NGHIEM",
+  "url": "content/kinh-nghiem/smart-trash.md",
+  "date": "2025-12-21"
+}
+Cập nhật: Chạy lệnh git add ., git commit và git push. Website sẽ tự động hiển thị bài mới trên Menu tương ứng.💡 Lợi ích cho đồ án của bạnTư duy Kỹ sư: Tách biệt Nội dung (Markdown), Dữ liệu (JSON) và Giao diện (HTML/CSS/JS).Portfolio thực chiến: Có thể dùng link GitHub Pages để gửi cho nhà tuyển dụng hoặc đính kèm vào CV.Tối ưu AIoT: Dễ dàng trình bày các đoạn code Python/C++ cho ESP32 và Raspberry Pi nhờ khả năng hiển thị code chuyên nghiệp.Tiếp theo, bạn có muốn tôi viết mã mẫu cho file index.html (chứa Menu 6 mục) và file script.js (xử lý đọc JSON) để bạn bắt đầu xây dựng bộ khung không?

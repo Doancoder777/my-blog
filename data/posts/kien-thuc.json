@@ -1,0 +1,20 @@
+[
+    {
+        "id": "knowledge-04",
+        "title": "Các Linh Kiện Điện Tử: Giải Thích Bằng Phương Pháp Feynman",
+        "category": "KIEN_THUC",
+        "date": "26/12/2025",
+        "summary": "Hiểu các linh kiện điện tử qua hệ thống ống nước theo phương pháp Feynman. Từ điện trở, tụ điện, đi-ốt đến transistor - tất cả đều đơn giản như điều khiển dòng nước.",
+        "path": "content/kien-thuc/linh-kien-dien-tu-feynman.md",
+        "featured": true
+    },
+    {
+        "id": "knowledge-03",
+        "title": "Train, Validation, Test - Giải thích theo phương pháp Feynman",
+        "category": "KIEN_THUC",
+        "date": "25/12/2025",
+        "summary": "Hiểu rõ 3 tập dữ liệu quan trọng nhất trong AI qua ví dụ đời thường. Từ 'học sinh AI' đến kỹ sư AIoT chuyên nghiệp.",
+        "path": "content/kien-thuc/train-val-test-feynman.md",
+        "featured": true
+    }
+]
