@@ -3,7 +3,7 @@
 ![Embedded Systems](../../../assets/images/placeholder-embedded-systems.jpg)
 *🖼️ Tìm kiếm: "STM32 Arduino ESP32 microcontroller boards" - Các board vi điều khiển*
 
-{{youtube:kLxhkU7V0UU|Embedded Systems Basics}}
+{{youtube:oPn_adlC1Q0|Embedded Systems Basics}}
 
 *🎥 Video: "What is Embedded Systems?" - Giới thiệu hệ thống nhúng cho người mới*
 

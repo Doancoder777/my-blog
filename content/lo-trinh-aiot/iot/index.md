@@ -54,7 +54,7 @@ home/bedroom/light/status
 home/bedroom/light/command
 ```
 
-{{youtube:SIpjqoKD4RM|MQTT Tutorial}}
+{{youtube:ez-ifrhXUoc|MQTT Tutorial}}
 
 *🎥 Video: "MQTT Explained" - MQTT hoạt động như thế nào*
 
