@@ -29,10 +29,30 @@
             </ul>
         </aside>
     </div>
+    
+    <!-- Disqus Comments -->
+    <div class="comments-section">
+        <div id="disqus_thread"></div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="script.js"></script>
     <script>window.onload = () => renderMarkdown();</script>
+    
+    <script>
+        var disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = window.location.pathname;
+        };
+        
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://huudoan-blog.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Vui lòng bật JavaScript để xem bình luận.</noscript>
 </body>
 </html>
