@@ -1,9 +1,9 @@
 # 🚀 Top 5 Công Nghệ AI 2025: Phân Tích Chuyên Sâu Cho Kỹ Sư AIoT
 
-![AI Technology 2025](../../assets/images/download%20(5).jpg)
+![AI Technology 2025](../../assets/images/AI_change_future.png)
 *Công nghệ AI đang thay đổi thế giới năm 2025*
 
-{{youtube:pOG3S_-DLCE|AI Trends 2025}}
+{{youtube:6VeIk6wfOPU|AI Trends 2025}}
 
 *🎥 Video: "Top AI Trends 2025" - Xu hướng AI năm 2025*
 

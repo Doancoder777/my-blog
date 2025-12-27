@@ -13,6 +13,50 @@ Thấy hay quá, tôi đã thử ngay với chính chiếc CV thời năm 3 củ
 
 ---
 
+## 🚀 Hướng dẫn chi tiết: Cách dùng Gemini review CV
+
+Bạn muốn thử ngay? Làm theo các bước sau:
+
+### Bước 1: Chuẩn bị CV
+
+- Chụp ảnh màn hình CV hoặc export sang PDF
+- Đảm bảo chất lượng ảnh rõ nét, dễ đọc
+- **Lưu ý:** Gemini hỗ trợ nhiều định dạng: JPG, PNG, PDF
+
+### Bước 2: Truy cập Gemini
+
+1. Mở trình duyệt và vào: **[gemini.google.com](https://gemini.google.com)**
+2. Đăng nhập bằng tài khoản Google của bạn
+3. Chọn phiên bản Gemini Advanced nếu có (để có feedback chi tiết hơn)
+
+### Bước 3: Upload CV và nhập prompt
+
+1. **Click vào nút "📎" (attach file)** hoặc kéo thả file CV vào khung chat
+2. **Copy và paste đúng prompt này:**
+
+```
+🖌️ roast my resume, overlay this with insane roast scribble, red ink, doodles, remarks, and comments! accurately position all annotations. no emojis.
+```
+
+3. **Nhấn Enter** và chờ kết quả
+
+### Bước 4: Nhận kết quả và phân tích
+
+- Gemini sẽ trả về ảnh CV của bạn với **vết bút đỏ đầy ắp**
+- Mỗi chú thích đều có ý nghĩa cụ thể
+- Đọc kỹ từng nhận xét để hiểu vấn đề
+
+### Bước 5: Lưu lại và cải thiện
+
+- **Download ảnh** kết quả để so sánh
+- **Ghi chú** những điểm cần sửa
+- **Sửa CV** theo từng feedback
+- **Thử lại** với Gemini để kiểm tra tiến bộ
+
+> **💡 Mẹo nhỏ:** Nếu bạn thấy Gemini "quá khắt", hãy thử prompt nhẹ nhàng hơn: *"Review my resume professionally and highlight areas for improvement"*
+
+---
+
 ## Tại sao chúng ta luôn thấy CV mình... ổn, cho đến khi bị "soi"?
 
 Bạn có bao giờ thắc mắc tại sao khi tự làm CV, mình luôn thấy nó rất logic và hoàn hảo không? Đó là do **Thiên kiến xác nhận (Confirmation Bias)**.

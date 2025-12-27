@@ -30,29 +30,33 @@
         </aside>
     </div>
     
-    <!-- Disqus Comments -->
+    <!-- Comments Section -->
     <div class="comments-section">
-        <div id="disqus_thread"></div>
+        <h2>💬 Bình luận</h2>
+        
+        <!-- Comment Form -->
+        <div class="comment-form">
+            <input type="text" id="comment-name" placeholder="Tên của bạn *" required>
+            <input type="email" id="comment-email" placeholder="Email (không bắt buộc)">
+            <textarea id="comment-text" placeholder="Viết bình luận của bạn..." required></textarea>
+            <button id="submit-comment" onclick="submitComment()">Gửi bình luận</button>
+            <div id="comment-status"></div>
+        </div>
+        
+        <!-- Comments Display -->
+        <div id="comments-list">
+            <p style="text-align: center; color: #666;">Đang tải bình luận...</p>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="script.js"></script>
-    <script>window.onload = () => renderMarkdown();</script>
-    
     <script>
-        var disqus_config = function () {
-            this.page.url = window.location.href;
-            this.page.identifier = window.location.pathname;
+        window.onload = () => {
+            renderMarkdown();
+            loadComments();
         };
-        
-        (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://doan-aiot.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
     </script>
-    <noscript>Vui lòng bật JavaScript để xem bình luận.</noscript>
 </body>
 </html>
