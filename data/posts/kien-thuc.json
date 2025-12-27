@@ -16,5 +16,21 @@
         "summary": "Hiểu rõ 3 tập dữ liệu quan trọng nhất trong AI qua ví dụ đời thường. Từ 'học sinh AI' đến kỹ sư AIoT chuyên nghiệp.",
         "path": "content/kien-thuc/train-val-test-feynman.md",
         "featured": true
+    },
+    {
+        "id": "knowledge-02",
+        "title": "Top 5 Công Nghệ AI 2025: Phân Tích Chuyên Sâu Cho Kỹ Sư AIoT",
+        "category": "KIEN_THUC",
+        "date": "26/12/2025",
+        "summary": "Năm 2025 đánh dấu bước ngoặt AI với 5 xu hướng nổi bật: Multimodal AI, On-Device AI, AI Agents, Generative Video, và Edge Computing. Chi phí inference giảm 60x, chip AI dưới $10 tăng 8x.",
+        "path": "content/goc-cong-nghe/ai-trends-2025.md"
+    },
+    {
+        "id": "knowledge-01",
+        "title": "ESP32 vs STM32 vs Raspberry Pi - Hướng Dẫn Chọn Board Cho Kỹ Sư IoT",
+        "category": "KIEN_THUC",
+        "date": "26/12/2025",
+        "summary": "So sánh chi tiết 3 board phổ biến nhất cho dự án IoT. Từ giá thành, hiệu năng, tiêu thụ điện, đến trường hợp sử dụng thực tế. Budget < 150K + WiFi → ESP32, cần µs timing → STM32, chạy AI/Linux → Raspberry Pi.",
+        "path": "content/goc-cong-nghe/board-comparison.md"
     }
 ]

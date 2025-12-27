@@ -4,7 +4,7 @@
 ![ESP32 vs STM32 vs Raspberry Pi](../../assets/images/placeholder-board-comparison.jpg)
 *🖼️ Tìm kiếm: "ESP32 STM32 Raspberry Pi comparison" - So sánh 3 board phổ biến nhất*
 
-{{youtube:rVLMig_7KOA|ESP32 vs Arduino vs STM32}}
+{{youtube:boF4cX338k4|ESP32 vs Arduino vs STM32}}
 
 *🎥 Video: "ESP32 vs STM32 - Which to Choose?" - So sánh ESP32 và STM32*
 
@@ -14,7 +14,7 @@ Bạn đang bắt đầu dự án IoT nhưng bối rối không biết chọn bo
 
 ---
 
-## 🎯 TL;DR - Không Có Thời Gian Đọc Hết?
+## 🎯 Tóm Tắt Nhanh - Không Có Thời Gian Đọc Hết?
 
 ```
 💰 Budget < 150K + Cần WiFi      → ESP32
@@ -417,7 +417,7 @@ Muốn có WiFi? Phải thêm module:
 ![Raspberry Pi 5](../../assets/images/placeholder-raspberry-pi.jpg)
 *🖼️ Tìm kiếm: "Raspberry Pi 5 board" - Board Raspberry Pi 5*
 
-{{youtube:CRJYOLUVb7E|Raspberry Pi Getting Started}}
+{{youtube:yul4gq_LrOI|Raspberry Pi Getting Started}}
 
 *🎥 Video: "Raspberry Pi 5 Review" - Đánh giá Raspberry Pi 5*
 

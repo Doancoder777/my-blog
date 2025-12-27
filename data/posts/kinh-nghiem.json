@@ -1,5 +1,14 @@
 [
     {
+        "id": "exp-06",
+        "title": "Dùng AI 'Cà Khịa' CV: Khi Sự Thật Làm Bạn 'Đau', Nhưng Giúp Bạn Lớn",
+        "category": "KINH_NGHIEM",
+        "date": "27/12/2025",
+        "summary": "Dùng Gemini để 'roast' CV thời sinh viên năm 3. Kết quả? Một gáo nước lạnh đầy thức tỉnh về những sai lầm khi viết CV.",
+        "path": "content/kinh-nghiem/ai-ca-khia-cv.md",
+        "featured": true
+    },
+    {
         "id": "exp-03",
         "title": "Bẫy của dây cắm và testboard: Bài học xương máu từ dự án Smart Home",
         "category": "KINH_NGHIEM",
@@ -14,8 +23,7 @@
         "category": "KINH_NGHIEM",
         "date": "26/12/2025",
         "summary": "Bạn thực sự hiểu hệ thống IoT, hay chỉ đang 'diễn kịch' với linh kiện? Code ví dụ thực tế từ cảm biến khói đến tối ưu pin.",
-        "path": "content/kinh-nghiem/cargo-cult-iot.md",
-        "featured": true
+        "path": "content/kinh-nghiem/cargo-cult-iot.md"
     },
     {
         "id": "exp-05",

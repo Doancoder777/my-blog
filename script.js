@@ -1,4 +1,9 @@
 // Tải danh sách bài viết từ nhiều JSON files
+const POSTS_PER_PAGE = 6; // Số bài viết mỗi trang
+let currentPage = 1;
+let currentCategory = 'ALL';
+let searchQuery = '';
+
 async function loadPosts() {
     try {
         const files = [
@@ -25,13 +30,17 @@ async function loadPosts() {
         // Loại bỏ duplicate chỉ khi hiển thị ALL
         const uniquePosts = deduplicatePosts(allPosts);
         window.allPosts = uniquePosts;
-        displayPosts(uniquePosts);
+        
+        // Update total posts count
+        updateSearchStats(uniquePosts.length);
+        
+        displayPosts(uniquePosts, 1);
     } catch (e) {
         console.error("Lỗi khi tải posts:", e);
     }
 }
 
-// Hàm loại bỏ duplicate posts
+// Hàm loại bỏ duplicate posts và sắp xếp (bài ghim lên đầu)
 function deduplicatePosts(posts) {
     const uniquePosts = [];
     const seenTitles = new Set();
@@ -43,36 +52,163 @@ function deduplicatePosts(posts) {
         }
     }
     
+    // Sắp xếp theo ngày (mới nhất lên đầu)
+    uniquePosts.sort((a, b) => {
+        const [dayA, monthA, yearA] = a.date.split('/');
+        const [dayB, monthB, yearB] = b.date.split('/');
+        const dateA = new Date(yearA, monthA - 1, dayA);
+        const dateB = new Date(yearB, monthB - 1, dayB);
+        return dateB - dateA;
+    });
+    
     return uniquePosts;
 }
 
-// Hiển thị danh sách bài viết
-function displayPosts(posts) {
+// Hiển thị danh sách bài viết với phân trang
+function displayPosts(posts, page = 1, shouldScroll = false) {
     const container = document.getElementById('post-list');
     if (!container) return;
-    container.innerHTML = posts.map(post => `
-        <div class="post-card">
+    
+    currentPage = page;
+    const start = (page - 1) * POSTS_PER_PAGE;
+    const end = start + POSTS_PER_PAGE;
+    const postsToShow = posts.slice(start, end);
+    
+    container.innerHTML = postsToShow.map(post => {
+        const url = post.category === 'LO_TRINH' ? 'lo-trinh-detail.html' : 'post-detail.html';
+        return `
+        <div class="post-card" onclick="window.location.href='${url}?path=${post.path}'">
+            <div class="post-meta">
+                <span class="post-date">📅 ${post.date}</span>
+                <span class="post-category">${post.category}</span>
+            </div>
             <h2>${post.featured ? '⭐ ' : ''}${post.title}</h2>
-            <p><small>${post.date} | Danh mục: ${post.category}</small></p>
-            <p>${post.summary}</p>
-            <a href="${post.category === 'LO_TRINH' ? 'lo-trinh-detail.html' : 'post-detail.html'}?path=${post.path}" style="color: #1abc9c; font-weight: bold;">Đọc chi tiết →</a>
+            <p class="post-summary">${post.summary}</p>
+            <span class="read-more">Xem thêm →</span>
         </div>
-    `).join('');
+    `;
+    }).join('');
+    
+    // Hiển thị phân trang
+    renderPagination(posts.length, page);
+    
+    // Chỉ scroll lên đầu khi chuyển trang hoặc search
+    if (shouldScroll) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+// Render phân trang
+function renderPagination(totalPosts, currentPage) {
+    const paginationContainer = document.getElementById('pagination');
+    if (!paginationContainer) return;
+    
+    const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+    
+    // Không hiển thị pagination nếu chỉ có 1 trang
+    if (totalPages <= 1) {
+        paginationContainer.innerHTML = '';
+        return;
+    }
+    
+    let html = '<div class="pagination-buttons">';
+    
+    // Nút Previous
+    if (currentPage > 1) {
+        html += `<button onclick="changePage(${currentPage - 1})" class="page-btn">« Trước</button>`;
+    }
+    
+    // Các nút số trang
+    for (let i = 1; i <= totalPages; i++) {
+        // Hiển thị: 1 ... 4 5 [6] 7 8 ... 20
+        if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+            html += `<button onclick="changePage(${i})" class="page-btn ${i === currentPage ? 'active' : ''}">${i}</button>`;
+        } else if (i === currentPage - 3 || i === currentPage + 3) {
+            html += `<span class="page-dots">...</span>`;
+        }
+    }
+    
+    // Nút Next
+    if (currentPage < totalPages) {
+        html += `<button onclick="changePage(${currentPage + 1})" class="page-btn">Sau »</button>`;
+    }
+    
+    html += '</div>';
+    html += `<p class="pagination-info">Trang ${currentPage} / ${totalPages} (${totalPosts} bài viết)</p>`;
+    
+    paginationContainer.innerHTML = html;
+}
+
+// Chuyển trang
+function changePage(page) {
+    if (currentCategory === 'ALL') {
+        displayPosts(window.allPosts, page, true);
+    } else if (currentCategory === 'BAI_VIET_HAY') {
+        const featured = window.allPostsRaw.filter(p => p.featured === true);
+        displayPosts(featured, page, true);
+    } else {
+        const filtered = window.allPostsRaw.filter(p => p.category === currentCategory);
+        displayPosts(filtered, page, true);
+    }
+}
+
+// Search posts
+function searchPosts(query) {
+    searchQuery = query.toLowerCase().trim();
+    currentPage = 1;
+    
+    let posts = currentCategory === 'ALL' ? window.allPosts : 
+                currentCategory === 'BAI_VIET_HAY' ? window.allPostsRaw.filter(p => p.featured === true) :
+                window.allPostsRaw.filter(p => p.category === currentCategory);
+    
+    if (searchQuery) {
+        posts = posts.filter(post => 
+            post.title.toLowerCase().includes(searchQuery) ||
+            post.summary.toLowerCase().includes(searchQuery) ||
+            post.category.toLowerCase().includes(searchQuery)
+        );
+    }
+    
+    updateSearchStats(posts.length);
+    displayPosts(posts, 1, true);
+}
+
+// Update search stats
+function updateSearchStats(count) {
+    const totalEl = document.getElementById('total-posts');
+    const statsEl = document.getElementById('search-stats');
+    
+    if (totalEl) {
+        totalEl.textContent = count;
+    }
+    
+    if (statsEl && searchQuery) {
+        statsEl.innerHTML = `Tìm thấy: <strong>${count}</strong> bài viết`;
+    } else if (statsEl) {
+        statsEl.innerHTML = `Tổng: <strong id="total-posts">${count}</strong> bài viết`;
+    }
 }
 
 // Lọc bài viết theo Menu
 function filterPosts(category) {
+    currentCategory = category;
+    searchQuery = '';
+    document.getElementById('search-input').value = '';
+    
     if (category === 'ALL') {
         // Hiển thị tất cả, có deduplicate
-        displayPosts(window.allPosts);
+        updateSearchStats(window.allPosts.length);
+        displayPosts(window.allPosts, 1, false);
     } else if (category === 'BAI_VIET_HAY') {
         // Hiển thị tất cả bài có featured = true
         const featured = window.allPostsRaw.filter(p => p.featured === true);
-        displayPosts(featured);
+        updateSearchStats(featured.length);
+        displayPosts(featured, 1, false);
     } else {
         // Filter từ raw data, không deduplicate trong category
         const filtered = window.allPostsRaw.filter(p => p.category === category);
-        displayPosts(filtered);
+        updateSearchStats(filtered.length);
+        displayPosts(filtered, 1, false);
     }
 }
 
@@ -91,16 +227,21 @@ async function renderMarkdown() {
             text = text.replace(/!\[([^\]]*)\]\(\.\.\/\.\.\/assets\//g, '![$1](assets/');
             text = text.replace(/!\[([^\]]*)\]\(\.\.\/\.\.\/\.\.\/assets\//g, '![$1](assets/');
             
-            // Convert YouTube shortcode to HTML embed
+            // Convert YouTube shortcode to HTML embed with unique IDs
             // Format: {{youtube:VIDEO_ID}} hoặc {{youtube:VIDEO_ID|Title}}
+            let videoCounter = 0;
             text = text.replace(/\{\{youtube:([a-zA-Z0-9_-]+)(?:\|([^}]+))?\}\}/g, (match, videoId, title) => {
                 const videoTitle = title || 'YouTube Video';
+                const iframeId = `youtube-player-${videoCounter++}`;
                 return `<div class="video-container">
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/${videoId}" title="${videoTitle}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe id="${iframeId}" width="100%" height="400" src="https://www.youtube.com/embed/${videoId}?enablejsapi=1" title="${videoTitle}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>`;
             });
             
             contentArea.innerHTML = marked.parse(text);
+            
+            // Initialize YouTube player control
+            initYouTubePlayers();
             
             // Kích hoạt tô màu code
             if (window.Prism) Prism.highlightAll();
@@ -110,6 +251,42 @@ async function renderMarkdown() {
         } catch (e) {
             contentArea.innerHTML = "<h2>Lỗi: Không tìm thấy nội dung bài viết.</h2>";
         }
+    }
+}
+
+// Initialize YouTube players to auto-pause others when one plays
+let youtubePlayers = [];
+
+function onYouTubeIframeAPIReady() {
+    const iframes = document.querySelectorAll('iframe[id^="youtube-player-"]');
+    
+    iframes.forEach((iframe, index) => {
+        const player = new YT.Player(iframe.id, {
+            events: {
+                'onStateChange': function(event) {
+                    // When this video starts playing (state 1)
+                    if (event.data === YT.PlayerState.PLAYING) {
+                        // Pause all other videos
+                        youtubePlayers.forEach((p, i) => {
+                            if (i !== index && p.getPlayerState() === YT.PlayerState.PLAYING) {
+                                p.pauseVideo();
+                            }
+                        });
+                    }
+                }
+            }
+        });
+        youtubePlayers.push(player);
+    });
+}
+
+function initYouTubePlayers() {
+    // Wait for API to be ready
+    if (typeof YT !== 'undefined' && YT.Player) {
+        onYouTubeIframeAPIReady();
+    } else {
+        // API not ready yet, wait for it
+        window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
     }
 }
 

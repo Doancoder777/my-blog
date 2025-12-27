@@ -38,8 +38,34 @@
         </ul>
     </nav>
 
-    <main id="post-list">
+    <div class="main-container">
+        <!-- Sidebar Search -->
+        <aside class="sidebar-search">
+            <div class="search-box">
+                <h3>🔍 Tìm kiếm</h3>
+                <input type="text" id="search-input" placeholder="Tìm kiếm bài viết..." oninput="searchPosts(this.value)">
+            </div>
+            <div class="search-stats">
+                <p id="search-stats">Tổng: <strong id="total-posts">0</strong> bài viết</p>
+            </div>
+            
+            <!-- About Me -->
+            <div class="sidebar-about">
+                <img src="assets/images/info3.jpg" alt="Hữu Đoan" class="sidebar-avatar">
+                <p class="sidebar-greeting">👋 Xin chào, tôi là <strong>Hữu Đoan</strong></p>
+                <p class="sidebar-desc">
+                    Sinh viên năm tư chuyên ngành Máy học và Ứng dụng. 
+                    Chào mừng bạn đến với blog của tôi, hi vọng blog của tôi sẽ mang đến nhiều kiến thức cho bạn! ✨
+                </p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="post-list">
         </main>
+    </div>
+
+    <div id="pagination" class="pagination"></div>
 
     <footer class="footer">
         <div class="footer-content">
